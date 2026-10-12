@@ -81,3 +81,19 @@ builds only, and iOS allows local-network HTTP only. Remote servers need HTTPS.
 flutter test
 flutter analyze
 ```
+
+`test/live_api_test.dart` checks the API contract and student data isolation against a
+running backend; it is skipped unless `--dart-define=LIVE_API=...` and seeded
+student/teacher accounts are passed (see the file header).
+
+## Not provided by the backend yet
+
+The app only shows what the ERP's `/api/v1` actually serves. These parts of the
+student brief have no backend support, so they are not in the app:
+
+- **Assignments / homework** and **learning materials** – no models or endpoints
+  exist (`teaching-assignments` is the teacher-to-class allocation, not homework).
+  The bottom bar therefore uses Home, Timetable, Attendance, Results and More.
+- **Notice read state and attachments** – `Notice` has neither, so there is no
+  "mark as read" or unread badge for notices (notifications do have both).
+- **Online fee payment** – no payment-gateway endpoint; fees are view-only.
