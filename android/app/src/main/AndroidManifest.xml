@@ -1,6 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Talks to the Education ERP API. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:label="education_erp_student"
+        android:label="Student Portal"
+        android:allowBackup="false"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
